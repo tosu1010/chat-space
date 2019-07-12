@@ -8,7 +8,7 @@
 |password|string|null:false|
 
 ### Assosiation
-- has_many :members, through: members
+- has_many :groups, through: members
 - has_many :messages
 
 ### Index
@@ -30,7 +30,7 @@
 |group_name|string|null: false|
 
 ### Assosiation
-- has_many :members
+- has_many :users, through: members
 - has_many :messages
 
 ### Index
