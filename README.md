@@ -12,6 +12,9 @@
 - has_many :members
 - has_many :messages
 
+### Index
+- add_index :name
+
 ## membersテーブル
 |Column|Type|Options|
 |:--|:--|:--|
