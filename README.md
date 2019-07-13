@@ -8,11 +8,9 @@
 |password|string|null:false|
 
 ### Assosiation
-- has_many :groups, through: members
+- has_many :groups, through: :members
+- has_many :members
 - has_many :messages
-
-### Index
-- add_index :name
 
 ## membersテーブル
 |Column|Type|Options|
@@ -27,14 +25,12 @@
 ## groupテーブル
 |Column|Type|Options|
 |:--|:--|:--|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Assosiation
-- has_many :users, through: members
+- has_many :users, through: :members
+- has_many :members
 - has_many :messages
-
-### Index
-- add_index :group_name
 
 ## messagesテーブル
 |Column|Type|Options|
