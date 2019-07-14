@@ -1,0 +1,9 @@
+$top-height: calc(35px + 20px + 15px + 12px);
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
