@@ -1,0 +1,39 @@
+@import "./valiable";
+.main{
+  &__header {
+    box-sizing: border-box;
+    padding: 0 40px;
+    height: $header_height;
+    border-bottom: #eeeeee solid 1px;
+  }
+}
+.group-info {
+  padding-top: 35px;
+  float: left;
+  &__group-name {
+    padding-bottom: 15px;
+    font-size: 20px;
+    color: #333333;
+  }
+  &__member-list {
+    font-size: 12px;
+    color: #999999;
+    li {
+      display: inline;
+    }
+  }
+}
+
+.edit-link {
+  height: $header_height;
+  float: right;
+  text-decoration: none;
+  color: #33CCFF;
+  &__edit-btn {
+    height: 38px;
+    line-height: 40px;
+    border: #33CCFF solid 1px;
+    margin-top: 28px;
+    padding: 0 20px 0 20px;
+  }
+}

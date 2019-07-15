@@ -1,60 +1,64 @@
-.sidebar
-  .sidebar__header
-    .sidebar__header__name
-      username
-    %ul{name: "icon", class: "sidebar__header__icon"}
-      %li{name: "edit", class: "sidebar__header__icon__edit"}
-        = fa_icon "edit"
-      %li{name: "setting", class: "sidebar__header__icon__setting"}
-        = fa_icon "cog"
-  .sidebar__groups
-    //部分テンプレ化できるところ
-    .sidebar__groups__group
-      .sidebar__groups__group__name
-        gruopname1
-      .sidebar__groups__group__message
-        hello!
-    .sidebar__groups__group
-      .sidebar__groups__group__name
-        gruopname2
-      .sidebar__groups__group__message
-        hello!!
+.wrapper
+  .sidebar
+    .sidebar__header
+      .sidebar__header__name
+        username
+      %ul{name: "icon", class: "sidebar__header__icon"}
+        %li{name: "edit", class: "sidebar__header__icon__edit"}
+          = fa_icon "edit"
+        %li{name: "setting", class: "sidebar__header__icon__setting"}
+          = fa_icon "cog"
+    .sidebar__groups
+      //部分テンプレ化できるところ
+      .sidebar__groups__group
+        .sidebar__groups__group__name
+          gruopname1
+        .sidebar__groups__group__message
+          hello!
+      .sidebar__groups__group
+        .sidebar__groups__group__name
+          gruopname2
+        .sidebar__groups__group__message
+          hello!!
 
-.main
-  .main__header
-    .main__header__group-info
-      .main__header__group-info__group-name
-        groupname1
-      %ul{name: "chat-member", class: "main__header__group-info__member-list"}
-        %li{class: "main__header__group-info__member_list__title"}
-          Member:
-        // 部分テンプレ化できるところ
-        %li{class: "main__header__group-info__member-list__member"}
-          tosu
-        %li{class: "main__header__group-info__member-list__member"}
-          nico 
-    =link_to "localhost:3000", class: "main__header__edit-link" do
-      .main__header__edit-link__edit-btn
-        Edit
-  .main__chat-space
-    // 部分テンプレ化できるところ
-    .main__chat-space__chat
-      .main__chat-space__chat__user-name
-        tosu
-      .main__chat-space__chat__date
-        2019/07/29(Mon) 23:59:00
-      .main__chat-space__chat__message
-        hello
-    .main__chat-space__chat
-      .main__chat-space__chat__user-name
-        nico
-      .main__chat-space__chat__date
-        2019/07/31(Wed) 20:40:00
-      .main__chat-space__chat__message
-        hello!!!
-  .main__chat-create
-    .main__chat-create__input
-    .main__chat-create__image
-    .main__chat-create__send
+  .main
+    .main__header
+      .group-info
+        .group-info__group-name
+          groupname1
+        %ul{name: "chat-member", class: "group-info__member-list"}
+          %li
+            Member :
+          // 部分テンプレ化できるところ
+          %li{class: "group-info__member-list__member"}
+            tosu
+          %li{class: "group-info__member-list__member"}
+            nico 
+      =link_to "localhost:3000", class: "edit-link" do
+        .edit-link__edit-btn
+          Edit
+    .chat-space
+      // 部分テンプレ化できるところ
+      %ul{class: "messages"}
+        %li{class: "message"}
+          %ul{class: "message__info"}
+            %li{class: "message__info message__user-name"}
+              tosu
+            %li{class: "message__info message__date"}
+              2019/07/29(Mon) 23:59:00
+          .message__text
+            hello
+        %li{class: "message"}
+          .message__info
+            %p{class: "message__info message__user-name"}
+              nico
+            %p{class: "message__info message__date"}
+              2019/07/31(Wed) 20:10:00
+          .message__text
+            hello!!!
+    .chat-create
+      .chat-create__input
+      .chat-create__image
+      .chat-create__send
 
 
