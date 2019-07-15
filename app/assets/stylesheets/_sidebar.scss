@@ -15,30 +15,26 @@
       font-weight: bold;
       float: left;
     }
-    &__icon {
+    &__icons {
       float: right;
-      &__edit {
-        padding-left: 5px;
-        float: left;
-      }
-      &__setting {
-        padding-left: 5px;
-        float: right;
-      }
+    }
+    &__icon {
+      display: inline;
     }
   }
-  &__groups {
-    padding: 20px 20px 0 20px;
-    font-weight: bold;
-    &__group {
-      padding-bottom: 40px;
-      &__name {
-        font-size: 15px;
-        padding-bottom: 5px
-      }
-      &__message {
-        font-size: 11px;
+}
+
+.groups {
+  padding: 20px 20px 0 20px;
+  font-weight: bold;
+  &__group {
+    padding-bottom: 40px;
+    &__name {
+      font-size: 15px;
+      padding-bottom: 5px
     }
+    &__message {
+      font-size: 11px;
     }
   }
 }

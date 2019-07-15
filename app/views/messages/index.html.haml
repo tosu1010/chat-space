@@ -3,22 +3,22 @@
     .sidebar__header
       .sidebar__header__name
         username
-      %ul{name: "icon", class: "sidebar__header__icon"}
-        %li{name: "edit", class: "sidebar__header__icon__edit"}
+      %ul{name: "icon", class: "sidebar__header__icons"}
+        %li{name: "edit", class: "sidebar__header__icon"}
           = fa_icon "edit"
-        %li{name: "setting", class: "sidebar__header__icon__setting"}
+        %li{name: "setting", class: "sidebar__header__icon"}
           = fa_icon "cog"
-    .sidebar__groups
+    .groups
       //部分テンプレ化できるところ
-      .sidebar__groups__group
-        .sidebar__groups__group__name
+      .groups__group
+        .groups__group__name
           gruopname1
-        .sidebar__groups__group__message
+        .groups__group__message
           hello!
-      .sidebar__groups__group
-        .sidebar__groups__group__name
+      .groups__group
+        .groups__group__name
           gruopname2
-        .sidebar__groups__group__message
+        .groups__group__message
           hello!!
 
   .main
