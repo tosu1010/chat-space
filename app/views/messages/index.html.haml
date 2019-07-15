@@ -1,48 +1,60 @@
 .sidebar
-  .sidebar__user
-    .sidebar__user__name
+  .sidebar__header
+    .sidebar__header__name
       username
-    .sidebar__icon
-      .sidebar__icon__edit
+    %ul{name: "icon", class: "sidebar__header__icon"}
+      %li{name: "edit", class: "sidebar__header__icon__edit"}
         = fa_icon "edit"
-      .sidebar__icon__setting
+      %li{name: "setting", class: "sidebar__header__icon__setting"}
         = fa_icon "cog"
-  .sidebar__group
-    .sidebar__group__name
-      gruopname1
-    .sidebar__group__message
-      hello!
-  .sidebar__group
-    .sidebar__group__name
-      gruopname2
-    .sidebar__group__message
-      hello!!
-.contents
-  .contents__group-info
-    .contens__group-info__name
-      groupname1
-    .contents__group-info__member
-      Member: tosu
-    %button.contents__edit-btn
-      Edit
-  .contents__chat-space
-    .contents__chat-space__chat
-      .contents__chat-space__chat__user-name
+  .sidebar__groups
+    //部分テンプレ化できるところ
+    .sidebar__groups__group
+      .sidebar__groups__group__name
+        gruopname1
+      .sidebar__groups__group__message
+        hello!
+    .sidebar__groups__group
+      .sidebar__groups__group__name
+        gruopname2
+      .sidebar__groups__group__message
+        hello!!
+
+.main
+  .main__header
+    .main__header__group-info
+      .main__header__group-info__group-name
+        groupname1
+      %ul{name: "chat-member", class: "main__header__group-info__member-list"}
+        %li{class: "main__header__group-info__member_list__title"}
+          Member:
+        // 部分テンプレ化できるところ
+        %li{class: "main__header__group-info__member-list__member"}
+          tosu
+        %li{class: "main__header__group-info__member-list__member"}
+          nico 
+    =link_to "localhost:3000", class: "main__header__edit-link" do
+      .main__header__edit-link__edit-btn
+        Edit
+  .main__chat-space
+    // 部分テンプレ化できるところ
+    .main__chat-space__chat
+      .main__chat-space__chat__user-name
         tosu
-      .contents__chat-space__chat__date
+      .main__chat-space__chat__date
         2019/07/29(Mon) 23:59:00
-      .contents__chat-space__chat__message
+      .main__chat-space__chat__message
         hello
-    .contents__chat-space__chat
-      .contents__chat-space__chat__user-name
+    .main__chat-space__chat
+      .main__chat-space__chat__user-name
         nico
-      .contents__chat-space__chat__date
+      .main__chat-space__chat__date
         2019/07/31(Wed) 20:40:00
-      .contents__chat-space__chat__message
+      .main__chat-space__chat__message
         hello!!!
-  .contents__chat-create
-    .contents__chat-create__input
-    .contents__chat-create__image
-    .contents__chat-create__send
+  .main__chat-create
+    .main__chat-create__input
+    .main__chat-create__image
+    .main__chat-create__send
 
 

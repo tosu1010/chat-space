@@ -5,40 +5,40 @@
   background-color: #2f3e51;
   height: 100vh;
   float: left;
-  &__user {
-    height: $top-height;
-    padding: 0 20px 20px 20px;
+  &__header {
+    padding: 0 20px;
     background-color: #253141;
-    line-height: calc(#{$top-height} + 20px);
+    height: $header_height;
+    line-height: $header_height;
     &__name {
       font-size: 16px;
       font-weight: bold;
       float: left;
     }
-  }
-  &__icon {
-    float: right;
-    &__edit {
-      padding-left: 5px;
-      float: left;
-    }
-    &__setting {
-      padding-left: 5px;
+    &__icon {
       float: right;
+      &__edit {
+        padding-left: 5px;
+        float: left;
+      }
+      &__setting {
+        padding-left: 5px;
+        float: right;
+      }
     }
   }
-  &:after {
-    @include clearfix();
-  }
-  &__group {
-    padding: 20px;
+  &__groups {
+    padding: 20px 20px 0 20px;
     font-weight: bold;
-    &__name {
-      font-size: 15px;
-      padding-bottom: 5px
+    &__group {
+      padding-bottom: 40px;
+      &__name {
+        font-size: 15px;
+        padding-bottom: 5px
+      }
+      &__message {
+        font-size: 11px;
     }
-    &__message {
-      font-size: 11px;
     }
   }
 }

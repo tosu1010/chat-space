@@ -1,4 +1,4 @@
-$top-height: calc(35px + 20px + 15px + 12px);
+$header_height: 100px;
 
 @mixin clearfix() {
   &:after {
