@@ -4,7 +4,10 @@
     box-sizing: border-box;
     padding: 0 40px;
     height: $header_height;
+    width: 100%;
     border-bottom: #eeeeee solid 1px;
+    position: fixed;
+    z-index: 1;
   }
 }
 .group-info {
@@ -23,16 +26,15 @@
     }
   }
 }
-
 .edit-link {
   height: $header_height;
   float: right;
   text-decoration: none;
-  color: #33CCFF;
+  color: $water-blue;
   &__edit-btn {
     height: 38px;
     line-height: 40px;
-    border: #33CCFF solid 1px;
+    border: $water-blue solid 1px;
     margin-top: 28px;
     padding: 0 20px 0 20px;
   }

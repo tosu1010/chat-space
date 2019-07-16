@@ -38,27 +38,31 @@
         .edit-link__edit-btn
           Edit
     .chat-space
-      // 部分テンプレ化できるところ
-      %ul{class: "messages"}
-        %li{class: "message"}
-          %ul{class: "message__info"}
-            %li{class: "message__info message__user-name"}
-              tosu
-            %li{class: "message__info message__date"}
-              2019/07/29(Mon) 23:59:00
-          .message__text
-            hello
-        %li{class: "message"}
-          .message__info
-            %p{class: "message__info message__user-name"}
-              nico
-            %p{class: "message__info message__date"}
-              2019/07/31(Wed) 20:10:00
-          .message__text
-            hello!!!
-    .chat-create
-      .chat-create__input
-      .chat-create__image
-      .chat-create__send
+      .chat-space__window
+        // 部分テンプレ化できるところ
+        %ul{class: "messages"}
+          %li{class: "message"}
+            %ul{class: "message__info"}
+              %li{class: "message__info message__user-name"}
+                aaa
+              %li{class: "message__info message__date"}
+                2019/07/29(Mon) 23:59:00
+            .message__text
+              hello
+          %li{class: "message"}
+            .message__info
+              %p{class: "message__info message__user-name"}
+                bbb
+              %p{class: "message__info message__date"}
+                2019/07/31(Wed) 20:10:00
+            .message__text
+              hello!!!
+      .chat-form
+        .chat-form__input
+          %input{type: "text", class: "chat-form__input__text"}
+          .chat-form__input__image
+            = fa_icon "picture-o"
+        .chat-form__send
+          %input{type: "submit", class: "chat-form__send__submit-btn", value: "Send"}
 
 

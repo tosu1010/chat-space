@@ -1,4 +1,6 @@
 $header_height: 100px;
+$main_width: calc(100vw - 300px);
+$water-blue: #38AEF0;
 
 @mixin clearfix() {
   &:after {
