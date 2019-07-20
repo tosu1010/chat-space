@@ -1,0 +1,8 @@
+@import "./valiable";
+@import "./main_header";
+@import "./main_chat-space";
+.main {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  float: right;
+}

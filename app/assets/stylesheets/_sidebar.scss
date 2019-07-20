@@ -1,0 +1,48 @@
+@import "./valiable";
+.sidebar {
+  width: 300px;
+  color: #ffffff;
+  background-color: #2f3e51;
+  height: 100vh;
+  float: left;
+  position: fixed;
+  z-index: 2;
+  &__header {
+    padding: 0 20px;
+    background-color: #253141;
+    height: $header_height;
+    line-height: $header_height;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+  }
+}
+
+.icons {
+  float: right;
+  &__link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  li {
+    display: inline;
+  }
+}
+
+
+.groups {
+  padding: 20px 20px 0 20px;
+  font-weight: bold;
+  &__group {
+    padding-bottom: 40px;
+    &__name {
+      font-size: 15px;
+      padding-bottom: 5px
+    }
+    &__message {
+      font-size: 11px;
+    }
+  }
+}
