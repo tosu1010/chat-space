@@ -1,18 +1,22 @@
 @import "./valiable";
 .main{
   &__header {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
     box-sizing: border-box;
     padding: 0 40px;
     height: $header_height;
-    width: 100%;
+    width: $main_width;
     border-bottom: #eeeeee solid 1px;
+    background-color: #ffffff;
     position: fixed;
+    top: 0;
     z-index: 1;
   }
 }
 .group-info {
   padding-top: 35px;
-  float: left;
   &__group-name {
     padding-bottom: 15px;
     font-size: 20px;
@@ -27,11 +31,10 @@
   }
 }
 .edit-link {
-  height: $header_height;
-  float: right;
+  margin-left: auto;
   text-decoration: none;
-  color: $water-blue;
   &__edit-btn {
+    color: $water-blue;
     height: 38px;
     line-height: 40px;
     border: $water-blue solid 1px;

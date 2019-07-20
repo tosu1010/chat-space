@@ -2,7 +2,6 @@
 .chat-space {
   box-sizing: border-box;
   background-color:#fafafa;
-  padding-top: $header_height;
   height: calc(100vh - #{$header_height});
   &__window{
     padding: 46px 40px 0 40px;
