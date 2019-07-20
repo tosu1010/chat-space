@@ -31,14 +31,14 @@
   }
 }
 .edit-link {
-  margin-left: auto;
+  margin: 30px 0 30px auto;
   text-decoration: none;
+
   &__edit-btn {
     color: $water-blue;
     height: 38px;
     line-height: 40px;
     border: $water-blue solid 1px;
-    margin-top: 28px;
     padding: 0 20px 0 20px;
   }
 }
