@@ -6,6 +6,7 @@
   height: 100vh;
   float: left;
   position: fixed;
+  z-index: 2;
   &__header {
     padding: 0 20px;
     background-color: #253141;
@@ -16,14 +17,20 @@
       font-weight: bold;
       float: left;
     }
-    &__icons {
-      float: right;
-    }
-    &__icon {
-      display: inline;
-    }
   }
 }
+
+.icons {
+  float: right;
+  &__link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  li {
+    display: inline;
+  }
+}
+
 
 .groups {
   padding: 20px 20px 0 20px;

@@ -3,66 +3,41 @@
     .sidebar__header
       .sidebar__header__name
         username
-      %ul{name: "icon", class: "sidebar__header__icons"}
-        %li{name: "edit", class: "sidebar__header__icon"}
-          = fa_icon "edit"
-        %li{name: "setting", class: "sidebar__header__icon"}
-          = fa_icon "cog"
+      %ul.icons{name: "icons"}
+        = link_to "localhost:3000", class: "icons__link" do
+          %li.icon{name: "edit-btn"}
+            = fa_icon "edit"
+        = link_to "localhost:3000", class: "icons__link" do
+          %li.icon{name: "setting-btn"}
+            = fa_icon "cog"
     .groups
-      //部分テンプレ化できるところ
-      .groups__group
-        .groups__group__name
-          gruopname1
-        .groups__group__message
-          hello!
-      .groups__group
-        .groups__group__name
-          gruopname2
-        .groups__group__message
-          hello!!
-
+      = render "group"
   .main
     .main__header
       .group-info
         .group-info__group-name
           groupname1
-        %ul{name: "chat-member", class: "group-info__member-list"}
+        %ul.group-info__member-list{name: "chat-member"}
           %li
             Member :
-          // 部分テンプレ化できるところ
-          %li{class: "group-info__member-list__member"}
+          %li.group-info__member-list__member
             aaa
-          %li{class: "group-info__member-list__member"}
+          %li.group-info__member-list__member
             bbb
       =link_to "localhost:3000", class: "edit-link" do
         .edit-link__edit-btn
           Edit
     .chat-space
       .chat-space__window
-        // 部分テンプレ化できるところ
-        %ul{class: "messages"}
-          %li{class: "message"}
-            %ul{class: "message__info"}
-              %li{class: "message__info message__user-name"}
-                aaa
-              %li{class: "message__info message__date"}
-                2019/07/29(Mon) 23:59:00
-            .message__text
-              hello
-          %li{class: "message"}
-            .message__info
-              %p{class: "message__info message__user-name"}
-                bbb
-              %p{class: "message__info message__date"}
-                2019/07/31(Wed) 20:10:00
-            .message__text
-              hello!!!
-      .chat-form
+        %ul.messages
+          = render "message"
+      %form.chat-form{action: "localhost:3000", method: "get"}
         .chat-form__input
-          %input{type: "text", class: "chat-form__input__text"}
-          .chat-form__input__image
+          %input.chat-form__input__text{type: "text"}
+          %label.chat-form__input__image
             = fa_icon "picture-o"
+            %input.chat-form__input__image__btn{type: "file"}
         .chat-form__send
-          %input{type: "submit", class: "chat-form__send__submit-btn", value: "Send"}
+          %input.chat-form__send__submit-btn{type: "submit", value: "Send"}
 
 
