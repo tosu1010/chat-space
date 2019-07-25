@@ -1,5 +1,7 @@
-.groups__group
-  .groups__group__name
-    gruopname1
-  .groups__group__message
-    hello!
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group), class: "groups__link" do
+    .groups__group
+      .groups__group__name
+        = group.name
+      .groups__group__message
+        hello!

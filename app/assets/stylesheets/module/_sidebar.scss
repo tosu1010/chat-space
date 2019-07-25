@@ -1,4 +1,4 @@
-@import "./valiable";
+@import "config/valiable";
 .sidebar {
   width: 300px;
   color: #ffffff;
@@ -35,8 +35,16 @@
 .groups {
   padding: 20px 20px 0 20px;
   font-weight: bold;
+  &__link {
+    color: #ffffff;
+    text-decoration: none;
+    :hover {
+      color: blue;
+    }
+  }
   &__group {
     padding-bottom: 40px;
+    text-decoration: none;
     &__name {
       font-size: 15px;
       padding-bottom: 5px

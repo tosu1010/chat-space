@@ -1,6 +1,10 @@
-@import "./reset";
+@import "config/valiable";
+@import "config/colors";
+@import "config/reset";
 @import "font-awesome";
-@import "./sidebar";
-@import "./main";
-@import "./popup";
-@import "./wrapper";
+@import "module/sidebar";
+@import "module/main";
+@import "module/wrapper";
+@import "module/user";
+@import "module/flash";
+@import "module/group.scss";
