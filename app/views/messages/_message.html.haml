@@ -1,8 +1,10 @@
 %li{class: "message"}
   %ul{class: "message__info"}
     %li{class: "message__info message__user-name"}
-      aaa
+      = message.user.name
     %li{class: "message__info message__date"}
-      2019/07/29(Mon) 23:59:00
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
-    hello
+    - if message.body.present?
+      = message.body
+    = image_tag message.image.url if message.image.present?

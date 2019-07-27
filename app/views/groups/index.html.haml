@@ -12,30 +12,30 @@
             = fa_icon "cog"
     .groups
       = render partial: "messages/group"
-  .main
-    .main__header
-      .group-info
-        .group-info__group-name
-          groupname1
-        %ul.group-info__member-list{name: "chat-member"}
-          %li
-            Member :
-          %li.group-info__member-list__member
-            aaa
-          %li.group-info__member-list__member
-            bbb
-      =link_to root_path, class: "edit-link" do
-        .edit-link__edit-btn
-          Edit
-    .chat-space
-      .chat-space__window
-        %ul.messages
-          = render partial: "messages/message"
-      %form.chat-form{action: "localhost:3000", method: "get"}
-        .chat-form__input
-          %input.chat-form__input__text{type: "text"}
-          %label.chat-form__input__image
-            = fa_icon "picture-o"
-            %input.chat-form__input__image__btn{type: "file"}
-        .chat-form__send
-          %input.chat-form__send__submit-btn{type: "submit", value: "Send"}
+  -# .main
+  -#   .main__header
+  -#     .group-info
+  -#       .group-info__group-name
+  -#         groupname1
+  -#       %ul.group-info__member-list{name: "chat-member"}
+  -#         %li
+  -#           Member :
+  -#         %li.group-info__member-list__member
+  -#           aaa
+  -#         %li.group-info__member-list__member
+  -#           bbb
+  -#     =link_to root_path, class: "edit-link" do
+  -#       .edit-link__edit-btn
+  -#         Edit
+    -# .chat-space
+    -#   .chat-space__window
+    -#     %ul.messages
+    -#       = render partial: "messages/message"
+    -#   %form.chat-form{action: "localhost:3000", method: "get"}
+    -#     .chat-form__input
+    -#       %input.chat-form__input__text{type: "text"}
+    -#       %label.chat-form__input__image
+    -#         = fa_icon "picture-o"
+    -#         %input.chat-form__input__image__btn{type: "file"}
+    -#     .chat-form__send
+    -#       %input.chat-form__send__submit-btn{type: "submit", value: "Send"}
