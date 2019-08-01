@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
   
   private
   def set_group
-    @group_id = params[:group_id]
     @group = Group.find(params[:group_id])
   end
 

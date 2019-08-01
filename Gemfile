@@ -58,12 +58,12 @@ end
 
 group :test do
   gem 'rails-controller-testing'
-  gem 'faker'
 end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'faker'
 gem 'tzinfo-data'
 gem 'haml-rails'
 gem 'erb2haml'
