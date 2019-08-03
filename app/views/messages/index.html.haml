@@ -23,7 +23,7 @@
           - @group.users.each do |user|
             %li.group-info__member-list__member
               = user.name
-      = link_to edit_group_path(@group_id), class: "edit-link" do
+      = link_to edit_group_path(@group), class: "edit-link" do
         .edit-link__edit-btn
           Edit
     .chat-space
