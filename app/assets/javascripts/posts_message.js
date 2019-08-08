@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function(){
       var image = message.image_url ? `<img src="${message.image_url}">` : ""
       var html = `<li class="message">
                     <ul class="message__info">
-                      <li class="message__info message__user_name">
+                      <li class="message__info message__user-name">
                         ${message.user_name}
                       </li>
                       <li class="message__info message__date">
@@ -14,8 +14,8 @@ $(document).on('turbolinks:load', function(){
                     </ul>
                     <div class="message__text">
                       ${body}
-                      ${image}
                     </div>
+                      ${image}
                   </li>`
       return html;
     };
@@ -36,6 +36,7 @@ $(document).on('turbolinks:load', function(){
         var html = buildHTML(message);
         $(".messages").append(html);
         $(".chat-form__input__text").val("");
+        $("html, body").animate({scrollTop: $(document).height()});
       })
       .fail(function(){
         alert("error");
