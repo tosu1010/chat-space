@@ -36,10 +36,11 @@ $(document).on('turbolinks:load', function(){
         var html = buildHTML(message);
         $(".messages").append(html);
         $(".chat-form__input__text").val("");
+        $("#message_image").val("");
         $("html, body").animate({scrollTop: $(document).height()});
       })
       .fail(function(){
-        alert("error");
+        alert("メッセージを入力して下さい");
       })
       .always(function(){
         $(".chat-form__send__submit-btn").removeAttr("disabled");
