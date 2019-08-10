@@ -30,7 +30,7 @@
       .chat-space__window
         %ul.messages
           = render @messages
-      = form_for [@group, @message], html: {class: "chat-form"} do |f|
+      = form_for [@group, @message], html: {class: "chat-form", id: "chat-form"}, url: group_messages_path(@group) do |f|
         .chat-form__input
           = f.text_field :body, class:"chat-form__input__text", placeholder: "input a message"
           = f.label :image, class:"chat-form__input__image" do
