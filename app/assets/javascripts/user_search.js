@@ -46,5 +46,8 @@ $(document).on("turbolinks:load", function(){
       $(this).parent().remove();
       $("#chat-member-list").append(html);
     });
+    $("#chat-member-list").on("click", ".user-search-remove", function(){
+      $(this).parent().remove();
+    });
   });
 })
