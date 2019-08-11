@@ -32,10 +32,8 @@ $(document).on("turbolinks:load", function(){
         $(".chat-group-user.clearfix").remove();
         if(input_name.length !== 0){
           $.each(users, function(i, user){
-            if(user.id !== ""){
-              let html = buildHTML(user)
-              $("#user-search-result").append(html);
-            };
+            let html = buildHTML(user)
+            $("#user-search-result").append(html);
           });
         };
       })
