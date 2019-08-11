@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
     @users = User.where("name LIKE(?)", "%#{user_params_name[:name]}%")
     respond_to do |format|
-      # format.html
+      format.html
       format.json
     end
   end
