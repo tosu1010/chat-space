@@ -7,6 +7,7 @@ $(document).on("turbolinks:load", function(){
                   </div>`
       return html;
     };
+    
     function add_user_html(user_id, user_name){
       let html = `<div class='chat-group-user'>
                     <input name='group[user_ids][]' type='hidden' value=${user_id}>
@@ -15,6 +16,7 @@ $(document).on("turbolinks:load", function(){
                   </div>`
       return html;
     };
+
     $("#user-search-field").on("keyup", function(e){
       e.preventDefault();
       let input_name = $(this).val();
@@ -39,6 +41,7 @@ $(document).on("turbolinks:load", function(){
         alert("ユーザー検索に失敗しました");
       })
     });
+
     $("#user-search-result").on("click", ".user-search-add", function(){
       let user_id = $(this).attr("data-user-id")
       let user_name = $(this).attr("data-user-name")
@@ -46,6 +49,7 @@ $(document).on("turbolinks:load", function(){
       $(this).parent().remove();
       $("#chat-member-list").append(html);
     });
+
     $("#chat-member-list").on("click", ".user-search-remove", function(){
       $(this).parent().remove();
     });
