@@ -7,7 +7,7 @@ $(document).on("turbolinks:load", function(){
                   </div>`
       return html;
     };
-    
+
     function add_user_html(user_id, user_name){
       let html = `<div class='chat-group-user'>
                     <input name='group[user_ids][]' type='hidden' value=${user_id}>
@@ -32,8 +32,10 @@ $(document).on("turbolinks:load", function(){
         $(".chat-group-user.clearfix").remove();
         if(input_name.length !== 0){
           $.each(users, function(i, user){
-            let html = buildHTML(user)
-            $("#user-search-result").append(html);
+            if(user.id !== ""){
+              let html = buildHTML(user)
+              $("#user-search-result").append(html);
+            };
           });
         };
       })
