@@ -1,10 +1,11 @@
 @import "config/valiable";
 .chat-space {
   box-sizing: border-box;
-  height: calc(100vh - #{$header_height});
+  height: calc(100% - #{$header_height});
   padding-top: $header_height;
   background-color:#fafafa;
   &__window{
+    background-color:#fafafa;
     padding: 46px 40px 100px 40px;
   }
 }
