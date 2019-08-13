@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   $(function(){
     function buildHTML(message){
       var body = message.body ? `${message.body}` : "";
-      var image = message.image_url ? `<img src="${message.image_url}">` : ""
+      var image = message.image ? `<img src="${message.image}">` : ""
       var html = `<li class="message", data-message_id="${message.id}">
                     <ul class="message__info">
                       <li class="message__info message__user-name">
@@ -33,6 +33,7 @@ $(document).on('turbolinks:load', function(){
         contentType: false
       })
       .done(function(message){
+        debugger;
         var html = buildHTML(message);
         $(".messages").append(html);
         $("#chat-form")[0].reset();
