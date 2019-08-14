@@ -1,27 +1,29 @@
-$(function() {
-  var buildMessageHTML = function(message) {
-    var body = message.body ? `${message.body}` : "";
-    var image = message.image ? `<img src="${message.image}">` : ""
-    var html = `<li class="message", data-message_id="${message.id}">
-                  <ul class="message__info">
-                    <li class="message__info message__user-name">
-                      ${message.user_name}
-                    </li>
-                    <li class="message__info message__date">
-                      ${message.created_at}
-                    </li>
-                  </ul>
-                  <div class="message__text">
-                    ${body}
-                  </div>
-                    ${image}
-                </li>`
-    return html;
-  }
-  
+$(document).on('turbolinks:load', function(){
+  $(function() {
+    var buildMessageHTML = function(message) {
+      var body = message.body ? `${message.body}` : "";
+      var image = message.image_url ? `<img src="${message.image_url}">` : ""
+      var html = `<li class="message", data-message-id="${message.id}">
+                    <ul class="message__info">
+                      <li class="message__info message__user-name">
+                        ${message.user_name}
+                      </li>
+                      <li class="message__info message__date">
+                        ${message.created_at}
+                      </li>
+                    </ul>
+                    <div class="message__text">
+                      ${body}
+                    </div>
+                      ${image}
+                  </li>`
+      return html;
+    }
+    
     var reloadMessages = function() {
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-      last_message_id = $(".message").data("message_id").push
+      last_message_id = $(".message:last").data("message-id");
+      // debugger;
       $.ajax({
         //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
         url: "api/messages",
@@ -40,10 +42,16 @@ $(function() {
         });
         //メッセージが入ったHTMLを取得
         //メッセージを追加
-        $("messages").append(insertHTML);
+        $(".messages").append(insertHTML);
+        $("html, body").animate({scrollTop: $(document).height()});
       })
       .fail(function() {
         console.log('error');
       });
     };
+    const group_messaes_path = /http:\/\/.+\/groups\/\d+\/messages/;
+    if(window.location.href.match(group_messaes_path)){
+      setInterval(reloadMessages, 5000);
+    };
   });
+});
