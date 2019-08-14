@@ -49,8 +49,8 @@ $(document).on('turbolinks:load', function(){
         console.log('error');
       });
     };
-    const group_messaes_path = /http:\/\/.+\/groups\/\d+\/messages/;
-    if(window.location.href.match(group_messaes_path)){
+    const group_messages_path = /http:\/\/.+\/groups\/\d+\/messages/;
+    if(window.location.href.match(group_messages_path)){
       setInterval(reloadMessages, 5000);
     };
   });
