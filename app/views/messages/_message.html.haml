@@ -1,4 +1,4 @@
-%li{class: "message"}
+%li{class: "message", data: {message_id: message.id}}
   %ul{class: "message__info"}
     %li{class: "message__info message__user-name"}
       = message.user.name
