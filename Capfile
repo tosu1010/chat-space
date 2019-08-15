@@ -20,7 +20,7 @@ install_plugin Capistrano::SCM::Git
 # For documentation on these, see for example:
 #
 #   https://github.com/capistrano/rvm
-  # https://github.com/capistrano/rbenv
+#   https://github.com/capistrano/rbenv
 #   https://github.com/capistrano/chruby
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
