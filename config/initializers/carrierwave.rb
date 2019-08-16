@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    region: 'ap-northeast-1a'
+    region: 'ap-northeast-1'
   }
 
   config.fog_directory  = 'tosu1010'
-  config.asset_host = 'https://s3-ap-northeast-1a.amazonaws.com/tosu1010'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tosu1010'
 end
