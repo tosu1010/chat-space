@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:render', function() {
   $(function() {
     var buildMessageHTML = function(message) {
       var body = message.body ? `${message.body}` : "";
