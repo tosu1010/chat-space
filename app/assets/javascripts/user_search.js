@@ -20,11 +20,16 @@ $(document).on("turbolinks:load", function(){
     $("#user-search-field").on("keyup", function(e){
       e.preventDefault();
       let input_name = $(this).val();
+      let user_ids = []
+      $("#chat-member-list input").each(function(i){
+        user_ids.push(Number($(this).attr("value")))
+      })
       $.ajax({
         type: "GET",
         url: "/users",
         data: {
-          name: input_name
+          name: input_name,
+          user_ids: user_ids
         },
         dataType: "json"
       })
@@ -42,6 +47,7 @@ $(document).on("turbolinks:load", function(){
       })
     });
 
+    
     $("#user-search-result").on("click", ".user-search-add", function(){
       let user_id = $(this).attr("data-user-id")
       let user_name = $(this).attr("data-user-name")
