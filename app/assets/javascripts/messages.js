@@ -1,11 +1,5 @@
-$(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function() {
   $(function() {
-    
-    const group_messages_path = /http:\/\/.+\/groups\/\d+\/messages/;
-    if(window.location.href.match(group_messages_path)){
-      setInterval(reloadMessages, 5000);
-    };
-
     var buildMessageHTML = function(message) {
       var body = message.body ? `${message.body}` : "";
       var image = message.image_url ? `<img src="${message.image_url}">` : ""
@@ -25,7 +19,7 @@ $(document).on('turbolinks:load', function(){
                   </li>`
       return html;
     }
-    
+
     var reloadMessages = function() {
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
       last_message_id = $(".message:last").data("message-id");
@@ -54,6 +48,10 @@ $(document).on('turbolinks:load', function(){
       .fail(function() {
         alert('error');
       });
+    };
+    const group_messages_path = /http:\/\/.+\/groups\/\d+\/messages/;
+    if (group_messages_path.test(location.href)){
+      setInterval(reloadMessages, 5000);
     };
   });
 });

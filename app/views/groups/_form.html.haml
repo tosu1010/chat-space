@@ -27,7 +27,7 @@
             %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
               = current_user.name
         - else
-          - Group.find(@group).users.each do |user|
+          - Group.find(@group.id).users.each do |user|
             .chat-group-user
               %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
                 = user.name
