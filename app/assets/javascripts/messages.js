@@ -1,5 +1,11 @@
 $(document).on('turbolinks:load', function(){
   $(function() {
+    
+    const group_messages_path = /http:\/\/.+\/groups\/\d+\/messages/;
+    if(window.location.href.match(group_messages_path)){
+      setInterval(reloadMessages, 5000);
+    };
+
     var buildMessageHTML = function(message) {
       var body = message.body ? `${message.body}` : "";
       var image = message.image_url ? `<img src="${message.image_url}">` : ""
@@ -46,12 +52,8 @@ $(document).on('turbolinks:load', function(){
         $("html, body").animate({scrollTop: $(document).height()});
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
-    };
-    const group_messages_path = /http:\/\/.+\/groups\/\d+\/messages/;
-    if(window.location.href.match(group_messages_path)){
-      setInterval(reloadMessages, 5000);
     };
   });
 });

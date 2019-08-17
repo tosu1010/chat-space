@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where("name LIKE(?)", "%#{user_params_name[:name]}%").where.not(id: current_user.id)
+    user_ids = []
+    if user_params_name_id[:user_ids]
+      user_ids.push(user_params_name_id[:user_ids])
+    end
+    @users = User.where("name LIKE(?)", "%#{user_params_name_id[:name]}%").where.not(id: user_ids)
     respond_to do |format|
       format.html
       format.json
@@ -21,8 +25,8 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params_name
-    params.permit(:name)
+  def user_params_name_id
+    params.permit(:name, user_ids: [])
   end
 
   def user_params
